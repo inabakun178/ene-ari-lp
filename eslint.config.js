@@ -1,4 +1,6 @@
 import eslintPluginAstro from 'eslint-plugin-astro';
+
+// FIXME: astroファイルでLintエラー発生する
 export default [
   // add more generic rule sets here, such as:
   // js.configs.recommended,

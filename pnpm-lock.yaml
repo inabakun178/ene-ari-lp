@@ -14,9 +14,6 @@ importers:
       astro:
         specifier: ^4.6.3
         version: 4.6.3(sass@1.75.0)(typescript@5.4.5)
-      sass:
-        specifier: ^1.75.0
-        version: 1.75.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -36,6 +33,9 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.13.0
         version: 0.13.0
+      sass:
+        specifier: ^1.75.0
+        version: 1.75.0
 
 packages:
 
