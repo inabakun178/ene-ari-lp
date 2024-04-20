@@ -6,3 +6,5 @@
 (~~そもそもエネアリ自体が非公式~~)
 
 [エネアリ サイト](https://ene-ari.vercel.app/)
+
+![energy arena](/public/energy-arena.jpg)
