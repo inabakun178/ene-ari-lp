@@ -1,0 +1,66 @@
+name: Client CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/client-ci.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - '.github/workflows/client-ci.yml'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  type-check:
+    name: Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Client Setup
+        uses: ./.github/composite_actions/client-setup
+      - name: Type Check
+        run: pnpm run tsc
+
+  lint-check:
+    name: Lint Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Client Setup
+        uses: ./.github/composite_actions/client-setup
+      - name: Lint
+        run: pnpm run lint:check
+
+  format-check:
+    name: Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Client Setup
+        uses: ./.github/composite_actions/client-setup
+      - name: Format Check
+        run: pnpm run format:check
+
+  build-astro-app:
+    name: Build Astro App
+    needs:
+      - type-check
+      - lint-check
+      - format-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Client Setup
+        uses: ./.github/composite_actions/client-setup
+      - name: Build astro app
+        run: pnpm run build
