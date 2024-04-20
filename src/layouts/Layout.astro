@@ -30,7 +30,8 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
+  /* TODO: scss 色の変数化 */
   /* box-sizing: border-box;を設定 */
   *,
   *::before,
@@ -140,6 +141,16 @@ const { title } = Astro.props;
       serif;
     background: #111;
     color: #fafafa;
+  }
+
+  a {
+    color: #fafafa;
+    text-decoration: none;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   *::selection {

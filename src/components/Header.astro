@@ -1,0 +1,47 @@
+<header class="siteHeader">
+  <div class="inner">
+    <!-- TODO: ロゴ作成 -->
+    <h1 class="siteTitle">エネアリ</h1>
+    <nav class="navi">
+      <ul class="linkList" role="list">
+        <li class="linkItem">
+          <a href="#about" class="link">About</a>
+        </li>
+        <li class="linkItem">
+          <a href="#history" class="link">History</a>
+        </li>
+        <li class="linkItem">
+          <a href="#contact" class="link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style lang="scss">
+  .siteHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .inner {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .linkList {
+    display: flex;
+    align-items: center;
+  }
+
+  .linkItem {
+    margin-left: 40px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+</style>
