@@ -1,6 +1,7 @@
 ---
 import "@styles/reset.scss";
 import Header from "@components/Header.astro";
+import Hands from "@components/Hands.astro";
 // TODO: VScodeでAstro componentの入力補完が効くようにする
 
 interface Props {
@@ -30,11 +31,12 @@ const black = "#222";
     <main>
       <slot />
     </main>
-    <!-- TODO: footer 追加 -->
+    <Hands />
   </body>
 </html>
 
 <style is:global lang="scss" define:vars={{ white, black }}>
+  // TODO: SPスタイリング
   html {
     font-family: "游明朝体", yumincho, "游明朝", "yu mincho",
       "ヒラギノ明朝 pron w3", "hiragino mincho pron w3", "HiraMinProN-W3",
@@ -42,6 +44,25 @@ const black = "#222";
       "hiragino mincho pro", "hgs明朝e", "ＭＳ Ｐ明朝", "ms pmincho", serif;
     background: var(--black);
     color: var(--white);
+  }
+
+  body {
+    background: url("../images/jyujyutsu-background.jpg") no-repeat center /
+      cover;
+    background-attachment: fixed;
+
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: url("../images/noise.gif") repeat;
+      pointer-events: none;
+      opacity: 0.2;
+      z-index: 1;
+    }
   }
 
   a {
