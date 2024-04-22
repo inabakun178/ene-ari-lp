@@ -1,3 +1,7 @@
+---
+import "@styles/animation.scss";
+---
+
 <header class="siteHeader">
   <div class="inner">
     <!-- TODO: ロゴ作成 -->
@@ -26,6 +30,8 @@
     top: 0;
     left: 0;
     background: url("../images/header-bg.png") no-repeat center top / 100% 100%;
+    z-index: 100;
+    animation: fade-in-top 1s 3.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
   }
 
   .inner {
@@ -33,11 +39,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    // TODO: SPのmedia queryをmixinにする
+    @media screen and (width <= 768px) {
+      padding: 15px;
+    }
+  }
+
+  .siteTitle {
+    font-size: 2rem;
+
+    @media screen and (width <= 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   .linkList {
     display: flex;
     align-items: center;
+
+    @media screen and (width <= 768px) {
+      display: none;
+    }
   }
 
   .linkItem {
