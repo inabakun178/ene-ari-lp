@@ -39,6 +39,17 @@ jobs:
       - name: Lint
         run: pnpm run lint:check
 
+  style-check:
+    name: Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Client Setup
+        uses: ./.github/composite_actions/client-setup
+      - name: Style lint
+        run: pnpm run stylelint
+
   format-check:
     name: Format Check
     runs-on: ubuntu-latest
@@ -55,6 +66,7 @@ jobs:
     needs:
       - type-check
       - lint-check
+      - style-check
       - format-check
     runs-on: ubuntu-latest
     steps:

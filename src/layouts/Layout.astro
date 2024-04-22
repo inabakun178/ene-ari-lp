@@ -1,9 +1,15 @@
 ---
+import "@styles/reset.scss";
+import Header from "@components/Header.astro";
+// TODO: VScodeでAstro componentの入力補完が効くようにする
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const white = "#fafafa";
+const black = "#222";
 ---
 
 <!doctype html>
@@ -20,41 +26,36 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <!-- TODO: footer 追加 -->
   </body>
 </html>
 
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
+<style is:global lang="scss" define:vars={{ white, black }}>
   html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+    font-family: "游明朝体", yumincho, "游明朝", "yu mincho",
+      "ヒラギノ明朝 pron w3", "hiragino mincho pron w3", "HiraMinProN-W3",
+      "ヒラギノ明朝 pron", "hiragino mincho pron", "ヒラギノ明朝 pro",
+      "hiragino mincho pro", "hgs明朝e", "ＭＳ Ｐ明朝", "ms pmincho", serif;
+    background: var(--black);
+    color: var(--white);
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   *::selection {
-    background-color: #fff;
-    color: #111;
+    background-color: var(--white);
+    color: var(--black);
   }
 </style>
