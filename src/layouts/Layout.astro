@@ -36,7 +36,6 @@ const black = "#222";
 </html>
 
 <style is:global lang="scss" define:vars={{ white, black }}>
-  // TODO: SPスタイリング
   html {
     font-family: "游明朝体", yumincho, "游明朝", "yu mincho",
       "ヒラギノ明朝 pron w3", "hiragino mincho pron w3", "HiraMinProN-W3",
@@ -79,5 +78,13 @@ const black = "#222";
   *::selection {
     background-color: var(--white);
     color: var(--black);
+  }
+
+  .spInline {
+    display: none;
+
+    @media screen and (width <= 768px) {
+      display: inline;
+    }
   }
 </style>

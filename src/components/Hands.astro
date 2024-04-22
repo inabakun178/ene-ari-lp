@@ -22,6 +22,11 @@ import "@styles/animation.scss";
     font-size: 4rem;
     animation: fade-in-bottom 1s 3.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 
+    @media screen and (width <= 768px) {
+      bottom: -10px;
+      font-size: 1.5rem;
+    }
+
     &:nth-of-type(1) {
       left: 0;
     }

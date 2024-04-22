@@ -39,11 +39,28 @@ import "@styles/animation.scss";
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    // TODO: SPのmedia queryをmixinにする
+    @media screen and (width <= 768px) {
+      padding: 15px;
+    }
+  }
+
+  .siteTitle {
+    font-size: 2rem;
+
+    @media screen and (width <= 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   .linkList {
     display: flex;
     align-items: center;
+
+    @media screen and (width <= 768px) {
+      display: none;
+    }
   }
 
   .linkItem {

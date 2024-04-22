@@ -6,7 +6,11 @@ import energyArenaImage from "@images/energy-arena.jpg";
 
 <section class="mv">
   <p class="catch">呪力ゼロ、拳のみ、勝者あり</p>
-  <h1 class="title">エネルギー・・・吸収・・・アリーナ</h1>
+  <h1 class="title">
+    エネルギー・・・<br class="spInline" />吸収・・・<br
+      class="spInline"
+    />アリーナ
+  </h1>
 
   <figure class="thumb">
     <Image
@@ -21,6 +25,10 @@ import energyArenaImage from "@images/energy-arena.jpg";
     font-size: 2.5rem;
     text-align: center;
     animation: focus-in-expand 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+    @media screen and (width <= 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   .title {
@@ -29,11 +37,20 @@ import energyArenaImage from "@images/energy-arena.jpg";
     text-align: center;
     animation: focus-in-expand 1.2s 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
       both;
+
+    @media screen and (width <= 768px) {
+      font-size: 2rem;
+      line-height: 1.7;
+    }
   }
 
   .thumb {
     width: 50%;
     margin: 30px auto 0;
     animation: puff-in-center 1s 2.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+
+    @media screen and (width <= 768px) {
+      width: 90%;
+    }
   }
 </style>
