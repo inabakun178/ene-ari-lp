@@ -1,13 +1,55 @@
 ---
-
+import "@styles/animation.scss";
 ---
 
-<section class="about">
-  <p>about</p>
-  <p>about</p>
-  <p>about</p>
-  <p>about</p>
-  <p>about</p>
+<section class="about" id="about">
+  <!-- TODO: titleをコンポーネント化する -->
+  <h2 class="title">About</h2>
+
+  <p class="text">エネアリとは何か？</p>
+  <p class="text">
+    「エネルギー・・・吸収・・・アリーナ」はKAISENの使う領域展開。
+  </p>
+  <p class="text">
+    領域内の相手のエネルギーを吸収することで、拳のみとする事が可能。
+  </p>
+  <p class="text">
+    まだ作中では言及されていないが、領域の必中効果が弱い代わりに、<br
+    />領域の押し合いに強いのではないか？という説がファンの中で議論されている。
+  </p>
+  <p class="text">
+    また、領域内では格闘技のリングの周囲に巨大な手が立っている。
+  </p>
+  <p class="text">巨大な手は戦闘では使わないが、格好いい手となっている。</p>
 </section>
 
-<!-- <style lang="scss"></style> -->
+<style lang="scss">
+  .about {
+    padding: 50px 15px;
+  }
+
+  .title {
+    margin-bottom: 50px;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #2e89e4;
+    animation: fade-in-bottom 0.7s 0s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+
+    @media screen and (width <= 768px) {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+  }
+
+  .text {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    animation: fade-in-bottom 0.7s 0s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+
+    @media screen and (width <= 768px) {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+  }
+</style>
