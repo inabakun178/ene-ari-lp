@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import "@styles/animation.scss";
 import energyArenaImage from "@images/energy-arena.jpg";
 ---
 
@@ -34,33 +35,5 @@ import energyArenaImage from "@images/energy-arena.jpg";
     width: 50%;
     margin: 30px auto 0;
     animation: puff-in-center 1s 2.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  }
-
-  // TODO: アニメーションのコードを移動する
-  @keyframes focus-in-expand {
-    0% {
-      letter-spacing: -0.5em;
-      filter: blur(12px);
-      opacity: 0;
-    }
-
-    100% {
-      filter: blur(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes puff-in-center {
-    0% {
-      transform: scale(1.4);
-      filter: blur(4px);
-      opacity: 0;
-    }
-
-    100% {
-      transform: scale(1);
-      filter: blur(0);
-      opacity: 1;
-    }
   }
 </style>
