@@ -1,4 +1,5 @@
 ---
+import "@styles/reset.scss";
 import Header from "@components/Header.astro";
 // TODO: VScodeでAstro componentの入力補完が効くようにする
 
@@ -7,6 +8,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const white = "#fafafa";
+const black = "#222";
 ---
 
 <!doctype html>
@@ -31,100 +34,8 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style is:global lang="scss">
-  // TODO: reset.cssの置き場を考える(リファクタ)
-  /* TODO: scss 色の変数化 */
-
-  /* box-sizing: border-box;を設定 */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  /* フォントサイズの拡大を防ぐ */
-  html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-  }
-
-  /* デフォルトのマージンを削除、作成するCSSの制御を改善するため */
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin: 0;
-  }
-
-  /* リストのスタイルを削除、これはデフォルトのスタイルが削除されることを示唆します */
-  ul[role="list"],
-  ol[role="list"] {
-    list-style: none;
-  }
-
-  /* bodyのデフォルトを設定 */
-  body {
-    min-height: 100vh;
-    line-height: 1.5;
-  }
-
-  /* 見出しやインタラクティブ要素のline-heightを設定 */
-  h1,
-  h2,
-  h3,
-  h4,
-  button,
-  input,
-  label {
-    line-height: 1.1;
-  }
-
-  /* 見出しのテキスト折り返しをbalanceに設定 */
-  h1,
-  h2,
-  h3,
-  h4 {
-    text-wrap: balance;
-  }
-
-  /* classを持たないa要素はデフォルトのスタイルを継承 */
-  a:not([class]) {
-    text-decoration-skip-ink: auto;
-    color: currentColor;
-  }
-
-  /* 画像の扱いを簡単にする */
-  img,
-  picture {
-    max-width: 100%;
-    display: block;
-  }
-
-  /* inputやbuttonなどのfontは継承 */
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  }
-
-  /* rows属性のないtextareasが小さくならないようにする */
-  textarea:not([rows]) {
-    min-height: 10em;
-  }
-
-  /* アンカーされている要素には余分なスクロールマージンが必要 */
-  :target {
-    scroll-margin-block: 5ex;
-  }
-
+<style is:global lang="scss" define:vars={{ white, black }}>
+  // TODO: stylelintの導入
   html {
     font-family:
       游明朝体,
@@ -142,12 +53,12 @@ const { title } = Astro.props;
       ＭＳ Ｐ明朝,
       ms pmincho,
       serif;
-    background: #111;
-    color: #fafafa;
+    background: var(--black);
+    color: var(--white);
   }
 
   a {
-    color: #fafafa;
+    color: var(--white);
     text-decoration: none;
     transition: 0.4s;
 
@@ -157,7 +68,7 @@ const { title } = Astro.props;
   }
 
   *::selection {
-    background-color: #fafafa;
-    color: #111;
+    background-color: var(--white);
+    color: var(--black);
   }
 </style>
