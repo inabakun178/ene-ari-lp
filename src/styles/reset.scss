@@ -7,8 +7,6 @@
 
 /* フォントサイズの拡大を防ぐ */
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
 
@@ -60,7 +58,7 @@ h4 {
 /* classを持たないa要素はデフォルトのスタイルを継承 */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: currentColor;
+  color: currentcolor;
 }
 
 /* 画像の扱いを簡単にする */
