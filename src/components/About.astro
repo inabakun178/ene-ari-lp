@@ -1,10 +1,10 @@
 ---
 import "@styles/animation.scss";
+import Title from "@components/Title.astro";
 ---
 
 <section class="about" id="about">
-  <!-- TODO: titleをコンポーネント化する -->
-  <h2 class="title">About</h2>
+  <Title title="About" />
 
   <p class="text">エネアリとは何か？</p>
   <p class="text">
@@ -28,23 +28,11 @@ import "@styles/animation.scss";
     padding: 50px 15px;
   }
 
-  .title {
-    margin-bottom: 50px;
-    font-size: 4rem;
-    letter-spacing: 0.1em;
-    text-shadow: 0 0 10px #2e89e4;
-    animation: fade-in-bottom 0.7s 0s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-
-    @media screen and (width <= 768px) {
-      margin-bottom: 30px;
-      font-size: 2.5rem;
-    }
-  }
-
   .text {
     margin-top: 20px;
     font-size: 1.8rem;
     line-height: 1.7;
+    text-shadow: 0 0 10px #222;
     animation: fade-in-bottom 0.7s 0s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 
     @media screen and (width <= 768px) {
