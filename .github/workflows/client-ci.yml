@@ -7,10 +7,14 @@ on:
     paths:
       - 'src/**'
       - '.github/workflows/client-ci.yml'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
   pull_request:
     paths:
       - 'src/**'
       - '.github/workflows/client-ci.yml'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
 
 defaults:
   run:
