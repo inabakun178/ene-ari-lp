@@ -16,7 +16,7 @@
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,css,astro}'"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
+    "@astrojs/check": "^0.7.0",
     "astro": "^4.6.3",
     "sharp": "^0.33.3",
     "typescript": "^5.4.5"
